@@ -36,6 +36,7 @@ public class LoginPage {
             driver.findElement(passwordTextField).sendKeys("secret_sauce");
         } catch (Exception e) {
             System.out.println("Password text field is not found: " + e.getMessage());
+            Assert.fail("Password text field is not found: " + e.getMessage());System.out.println("");
         }
     }
 
