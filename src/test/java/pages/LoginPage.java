@@ -48,7 +48,7 @@ public class LoginPage {
 //            Assert.assertEquals(actualLoginButtonText, "Login", "Login button text is not correct");
             driver.findElement(loginButton).click();
         } catch (Exception e) {
-            System.out.println("Login button is not found: " + e.getMessage());
+            System.out.println("Login button is not found:    " + e.getMessage());
         }
     }
 
