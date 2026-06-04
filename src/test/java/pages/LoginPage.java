@@ -10,6 +10,7 @@ public class LoginPage {
     private By userNameTextField = By.xpath("//*[@id=\"user-name\"]");
     private By passwordTextField = By.xpath("//*[@id=\"password\"]");
     private By loginButton = By.id("login-button");
+    private By pageTitle = By.xpath("//*[@id=\"root\"]/div/div[1]");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -17,6 +18,15 @@ public class LoginPage {
 
 
     //Actions
+    public void verifyLoginPageTitle() {
+        try {
+            Assert.assertTrue(driver.findElement(pageTitle).isDisplayed(), "Login page title is not displayed");
+            String actualLoginPageTitle = driver.findElement(pageTitle).getText();
+            Assert.assertEquals(actualLoginPageTitle, "Swag Labs", "Login page title is not correct");
+        } catch (Exception e) {
+            System.out.println("Login page title is not found: " + e.getMessage());
+        }
+    }
     public void enterUserName() {
         try {
             Assert.assertTrue(driver.findElement(userNameTextField).isDisplayed(), "Username testbox is not displayed");

@@ -14,6 +14,7 @@ public class LoginTest extends BaseClass {
     @Test
     public void loginTest() throws IOException {
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.verifyLoginPageTitle();
         loginPage.enterUserName();
         loginPage.enterPassword();
         loginPage.clickLoginButton();
