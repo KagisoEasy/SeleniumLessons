@@ -33,7 +33,7 @@ jobs:
       run: mvn clean compile
     
     - name: Run Tests
-      run: mvn test
+      run: xvfb-run -a mvn test
     
     - name: Generate Test Report
       if: always()
