@@ -15,6 +15,12 @@ public class BaseClass {
 
     @BeforeMethod
     public void setUp() throws IOException {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        
         driver = new ChromeDriver();
         driver.get(" https://www.saucedemo.com/");
         Assert.assertTrue(driver.getCurrentUrl().contains("www.saucedemo"), "User is not navigated to inventory page");
