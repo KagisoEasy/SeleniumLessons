@@ -23,7 +23,12 @@ jobs:
         java-version: ${{ matrix.java-version }}
         distribution: 'temurin'
         cache: maven
-    
+        
+    - name: Install Chrome and dependencies
+      run: 
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable xvfb
+        
     - name: Build with Maven
       run: mvn clean compile
     
