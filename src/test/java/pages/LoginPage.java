@@ -33,7 +33,7 @@ public class LoginPage {
             Assert.assertTrue(driver.findElement(userNameTextField).isEnabled(), "Username testbox is not enabled");
             String actualUserNamePlaceholder = driver.findElement(userNameTextField).getAttribute("placeholder");
             Assert.assertEquals(actualUserNamePlaceholder, "Username", "Username placeholder text is not correct");
-            driver.findElement(userNameTextField).sendKeys("standard_user");
+            driver.findElement(userNameTextField).sendKeys("error_user");
 
         } catch (Exception e) {
             System.out.println("Username text field is not found: " + e.getMessage());
